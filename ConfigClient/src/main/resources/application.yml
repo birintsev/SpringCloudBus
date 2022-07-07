@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: spring-cloud-bus-client
+  config:
+    import: configserver:http://localhost:8888
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
+    config:
+      fail-fast: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
